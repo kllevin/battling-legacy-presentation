@@ -4,21 +4,20 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+		<title>Fighting the Good Fight—The (never ending) Legacy Battle</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="A presentation by Kate Levin for SydCSS about: Fighting the Good Fight—The (never ending) Legacy Battle">
+		<meta name="author" content="Kate Levin">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="lib/css/prism-okiadia.css">
+    <link rel="stylesheet" href="css/theme/custom.css" id="theme">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -38,15 +37,16 @@
 
 		<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+
 				<section>
           <h1>Fighting the Good Fight</h1>
-          <h2>The (never ending) Legacy Battle</h2>
+          <h2>The <em>(never ending)</em> Legacy Battle</h2>
+          <span class="text-face">(ง ͠° ͟ل͜ ͡°)ง</span>
         </section>
 
-        <section class="dark-bg bg">
-          <h1>What is "Legacy"</h1>
+        <section>
+          <h1>What is “Legacy”?</h1>
         </section>
 
         <section>
@@ -57,22 +57,27 @@
         </section>
 
         <section>
-          <blockquote>"To me, legacy code is simply code without tests."</blockquote>
-          Michael C. Feathers, Effectively Working with Legacy Code
+          <blockquote>
+            “To me, legacy code is simply code without tests.”
+            <cite>Michael C. Feathers, <a href="http://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052">Effectively Working with Legacy Code</a></cite>
+          </blockquote>
         </section>
 
-        <section class="dark-bg bg">
-          <h1>Where does it come from?</h1>
+        <section class="u-text-align-center">
+          <img src="lib/img/operation.jpg" class="stretch" height="913" width="640" alt="Operation board game">
         </section>
 
         <section>
-          <h2>Methodologies change</h2>
+          <h1>Where Does It Come From?</h1>
+        </section>
+
+        <section>
+          <h2>Methodologies &amp; Technologies Change</h2>
           <ul>
             <li>Table layouts -> CSS layouts</li>
-            <li></li>
             <li>OOCSS</li>
-            <li>preprocessors (SASS, SCSS, LESS)</li>
-            <li>PostCSS, CSS Modules, etc.</li>
+            <li>Preprocessors (SASS, LESS, Stylus)</li>
+            <li>PostCSS, CSS Modules, Web Components etc.</li>
           </ul>
         </section>
 
@@ -88,7 +93,7 @@
           </ul>
         </section>
 
-        <section class="dark-bg bg">
+        <section>
           <h1>What's the big deal?</h1>
         </section>
 
@@ -101,7 +106,7 @@
           </ul>
         </section>
 
-       <section class="">
+       <section>
           <h2>It effects Developers</h2>
           <ul>
             <li>it takes longer to make simple changes</li>
@@ -110,17 +115,17 @@
           </ul>
         </section>
 
-        <section class="dark-bg bg">
+        <section>
           <h1>How do we fix our legacy problem</h1>
         </section>
 
-        <section class="">
+        <section>
           <h2>There is no silver bullet</h2>
           <p>We've all got different legacy codebases</p>
           <p>It's caused by different things</p>
         </section>
 
-        <section class="dark-bg bg">
+        <section>
           <h1>Thank You</h1>
         </section>
 
@@ -137,11 +142,20 @@
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+        progress: true,
+        history: true,
+        center: true,
+        width: 900,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// Tranisition type
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Transition speed
+        transitionSpeed: 'fast', // default/fast/slow
+
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+
 
 				// Optional reveal.js plugins
 				dependencies: [

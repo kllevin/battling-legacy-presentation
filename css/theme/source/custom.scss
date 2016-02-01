@@ -1,0 +1,382 @@
+/**
+ * Custom theme for reveal.js.
+ *
+ * Copyright (C) 2015 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+/**
+ * My settings.
+ */
+
+// Colours
+$colour-text: #3d464d;
+
+$colour-grey: #727375;
+
+$colour-white: #fff;
+
+$colour-black: #000;
+
+$colour-blue: #1B91FF;
+
+// Progress bar
+$colour-progress-bg: $colour-text;
+
+$colour-progress-indicator: $colour-white;
+
+// Controls
+$colour-controls: $colour-text;
+
+
+
+/**
+ * Default setting overrides.
+ */
+
+$backgroundColor: $colour-white;
+
+$mainColor: $colour-text;
+
+$headingColor: $colour-text;
+
+$mainFontSize: 36px;
+
+$mainFont: Lora, serif;
+
+$headingFont: $mainFont;
+
+$headingTextShadow: none;
+
+$headingLetterSpacing: normal;
+
+$headingTextTransform: none;
+
+$headingFontWeight: 400;
+
+$linkColor: $colour-blue;
+
+$linkColorHover: darken($linkColor, 10%);
+
+$selectionBackgroundColor: lighten($linkColor, 25%);
+
+$heading1Size: 2em;
+
+$heading2Size: 1.3em;
+
+$heading3Size: 1em;
+
+$heading4Size: 1em;
+
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+
+
+/**
+ * Resets and overrides from `template/theme.scss`.
+ */
+
+html,
+body,
+.reveal {
+  font-weight: 400 !important;
+}
+
+.reveal {
+
+
+  /**
+   * Slides overrides.
+   */
+
+  .slides {
+    text-align: left;
+  }
+
+
+  /**
+   * Set line heights.
+   */
+
+  p,
+  ul,
+  ol,
+  blockquote {
+    line-height: 1.45;
+  }
+
+
+  /**
+   * Links.
+   */
+
+  a:hover,
+  a:focus {
+    text-decoration: none;
+  }
+
+
+  /**
+   * Headings.
+   */
+
+  h1 {
+    font-weight: 700;
+  }
+
+  h2 {
+    font-weight: 700;
+    margin-bottom: $blockMargin*2.5;
+  }
+
+
+  /**
+   * Paragraphs.
+   */
+
+  p {
+    margin: 40px 0;
+  }
+
+
+  /**
+   * Inline elements.
+   */
+
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-weight: 400;
+  }
+
+
+  /**
+   * Code.
+   */
+
+  code {
+    font-size: 0.7em !important;
+  }
+
+  // Prism
+  code[class*="language-"] {
+    display: inline;
+  }
+
+  pre[class*="language-"] {
+    padding: $blockMargin !important;
+    max-height: 400px;
+    margin-bottom: 40px !important;
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    code[class*="language-"] {
+      display: block !important;
+    }
+  }
+
+
+  /**
+   * Images.
+   */
+
+  section img {
+    margin: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+  }
+
+  a:hover img,
+  a:focus img {
+    background: none;
+    box-shadow: none;
+  }
+
+
+  /**
+   * Blockquotes.
+   */
+
+  blockquote {
+    color: $colour-grey;
+    font-style: italic;
+    font-weight: 400;
+    font-size: $mainFontSize + 14;
+    line-height: 1.2;
+    margin-bottom: $blockMargin;
+    padding: 0;
+    box-shadow: none;
+    background: none;
+    width: 80%;
+  }
+
+  cite {
+    color: lighten($colour-grey, 11%);
+    display: block;
+    font-size: $mainFontSize - 11;
+    margin-top: 22px;
+
+    &:before {
+      content: "\2014";
+    }
+  }
+
+
+  /**
+   * Lists.
+   */
+
+  ol,
+  dl,
+  ul {
+    display: block;
+  }
+
+  ol {
+    margin-left: 2em;
+
+    ol li {
+      list-style-type: lower-alpha;
+    }
+  }
+
+
+  /**
+   * Backgrounds.
+   */
+
+  .backgrounds  {
+    .dark-bg {
+      background-color: $linkColor;
+      color: white !important;
+    }
+  }
+
+  .text-face {
+    color: $colour-blue;
+  }
+
+
+  /**
+   * Controls.
+   */
+
+  .controls {
+    div {opacity: 0.3 !important;}
+    div.enabled {opacity: 1 !important;}
+
+    // Left
+    div.navigate-left,
+    div.navigate-left.enabled {border-right-color: $colour-controls;}
+
+    div.navigate-left.enabled:hover,
+    div.navigate-left.enabled:focus {border-right-color: lighten($colour-controls, 10%);}
+
+    // Right
+    div.navigate-right,
+    div.navigate-right.enabled {border-left-color: $colour-controls;}
+
+    div.navigate-right.enabled:hover,
+    div.navigate-right.enabled:focus {border-left-color: lighten($colour-controls, 10%);}
+
+    // Down
+    div.navigate-down,
+    div.navigate-down.enabled {border-top-color: $colour-controls;}
+
+    div.navigate-down.enabled:hover,
+    div.navigate-down.enabled:focus {border-top-color: lighten($colour-controls, 10%);}
+
+    // Up
+    div.navigate-up,
+    div.navigate-up.enabled {border-bottom-color: $colour-controls;}
+
+    div.navigate-up.enabled:hover,
+    div.navigate-up.enabled:focus {border-bottom-color: lighten($colour-controls, 10%);}
+  }
+
+
+  /**
+   * Progress bar.
+   */
+
+  .progress {
+    height: 5px;
+    background-color: $colour-progress-bg;
+
+    span {background-color: $colour-progress-indicator;}
+  }
+
+
+  /**
+   * Utilities.
+   */
+
+  .u-text-size-small {font-size: 0.75em !important;}
+
+  .u-text-size-large {font-size: 1.3em !important;}
+
+  .u-text-align-center {text-align: center !important;}
+
+  .u-text-align-left {text-align: left !important;}
+
+  .u-text-align-right {text-align: right !important;}
+
+  pre.language-css.u-s-m-none,
+  .u-s-m-none {margin: 0 !important;}
+
+  pre.language-css.u-s-mb-none,
+  .u-s-mb-none {margin-bottom: 0 !important;}
+
+  pre.language-css.u-s-mt-none,
+  .u-s-mt-none {margin-top: 0 !important;}
+
+  pre.language-css.u-s-mb-10,
+  .u-s-mb-10 {margin-bottom: 10px !important;}
+
+  .u-s-p-20 {padding: 20px !important;}
+
+  .u-s-mb-20 {margin-bottom: 20px !important;}
+
+  .u-s-mt-20 {margin-top: 20px !important;}
+
+  .u-s-mb-40 {margin-bottom: 40px !important;}
+
+  .u-s-mb-100 {margin-bottom: 100px !important;}
+
+  .u-s-p-none {padding: 0 !important;}
+
+  .u-s-pe-none {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .u-list-plain {
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .u-list-padding > li {
+    margin-bottom: 5px !important;
+
+    li,
+    &:last-child {margin-bottom: 0;}
+  }
+
+  .u-colour-grey {color: $colour-grey !important;}
+}
